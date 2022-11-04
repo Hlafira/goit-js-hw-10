@@ -7,11 +7,11 @@ const fieldsPrams = new URLSearchParams({
 const fields = '?' + fieldsPrams.toString();
 
 export const fetchCountries = name => {
-  return (promise = fetch(URL_COUNTRIES + name + fields).then(response => {
+  return fetch(URL_COUNTRIES + name + fields).then(response => {
     if (!response.ok) {
       throw new Error("Can't get data from server!");
     }
 
     return response.json();
-  }));
+  });
 };
